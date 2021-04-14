@@ -1,5 +1,6 @@
 package view;
 
+import controller.MainController;
 import processing.core.PApplet;
 
 public class Main extends PApplet{
@@ -7,15 +8,18 @@ public class Main extends PApplet{
 		PApplet.main("view.Main");
 	}
 	
-	public void settings() {
+	private MainController mainController;
 	
+	public void settings() {
+		size(1200, 800);
 	}
 	
 	public void setup() {
-
+		mainController = new MainController();
 	}
 
 	public void draw() {
-
+		background(0);
+		mainController.draw();
 	}
 } 

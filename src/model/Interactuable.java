@@ -6,25 +6,27 @@ import processing.core.PImage;
 public class Interactuable {
 
 	private boolean interacted;
-	private int posX, posY, speed, size;
+	private int posX, posY, speed, size, counter;
 	private String path;
 	private PImage image;
 	
-	public Interactuable(int px, int py, int sz, String pat) {
+	public Interactuable(int px, int py, int sz, String pat, PApplet app, int counter) {
 		interacted = false;
 		posX = px;
 		posY = py;
 		speed = 1;
 		size = sz;
 		path = pat;
+		this.counter = counter;
+		loadImageX(app);
 	}
 	
 	public void loadImageX( PApplet app) {
 		image = app.loadImage(path);
 	}
 	
-	public void draw() {
-		
+	public void draw(PApplet app) {
+		app.image(image, posX, posY);
 	}
 
 	public boolean isInteracted() {
