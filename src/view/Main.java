@@ -2,6 +2,7 @@ package view;
 
 import controller.MainController;
 import processing.core.PApplet;
+import processing.event.MouseEvent;
 
 public class Main extends PApplet{
 	public static void main (String[] args) {
@@ -22,4 +23,19 @@ public class Main extends PApplet{
 		background(0);
 		mainController.draw(this);
 	}
+	
+	public void mouseWheel(MouseEvent event) {
+		if(mainController.getScreen()==3) {
+			float e = event.getCount();
+			mainController.moveImages(e);
+			
+			if(e>0) {
+				mainController.setMouseMove(mainController.getMouseMove()+1);
+			}else {
+				mainController.setMouseMove(mainController.getMouseMove()-1);
+			}
+		}
+		
+	}
+	
 } 

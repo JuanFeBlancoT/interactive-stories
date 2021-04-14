@@ -5,10 +5,11 @@ import processing.core.PImage;
 
 public class ImageB {
 
-	private int posX, posY, speed;
+	private int posX, posY;
+	private double speed;
 	private PImage img;
 	
-	public ImageB(PApplet app,int px, int sp, PImage img) {
+	public ImageB(PApplet app,int px, double sp, PImage img) {
 		
 		posX = px;
 		posY = 0;
@@ -20,8 +21,9 @@ public class ImageB {
 		app.image(img, posX, posY);
 	}
 	
-	public void move() {
-		posX+=speed;
+	public void move(float x) {
+		int num = (int) x;
+		posX+=speed*x;
 	}
 
 	public int getPosX() {

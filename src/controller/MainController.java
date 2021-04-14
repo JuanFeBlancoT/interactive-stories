@@ -8,19 +8,22 @@ import processing.core.PImage;
 public class MainController {
 
 	private Logic logic;
-	private int screen;
+	private int screen, mouseMove;
 	private PImage bg, bhf, bhc, nm, frontal;
 	private ImageB bgo, bhfo, bhco, nmo, frontalo; 
+	private int interactionsCompleted;
 	
 	public MainController(PApplet app) {
 		logic = new Logic();
 		screen = 3;
+		mouseMove = 0;
+		interactionsCompleted = 0;
 		loadImages(app);
 		bgo = new ImageB(app, 0,0, bg);
-		bhfo = new ImageB(app, 0,0, bhf);
-		bhco = new ImageB(app, -400,0, bhc);
-		nmo = new ImageB(app, -400,0, nm);
-		frontalo = new ImageB(app, -400,0, frontal);
+		bhfo = new ImageB(app, -400,2, bhf);
+		bhco = new ImageB(app, -400,1, bhc);
+		nmo = new ImageB(app, -400,4, nm);
+		frontalo = new ImageB(app, -400,5, frontal);
 	}
 
 	private void loadImages(PApplet app) {
@@ -45,13 +48,15 @@ public class MainController {
 			//bg
 			bgo.draw(app);
 			//behind far
-			bhfo.draw(app);
-			//behind close
 			bhco.draw(app);
+			//behind close
+			bhfo.draw(app);
 			//normal
 			nmo.draw(app);
 			//front
 			frontalo.draw(app);
+			
+			//interactuable
 			
 			break;
 		case 4:
@@ -60,4 +65,32 @@ public class MainController {
 		}
 		
 	}
+
+	public int getScreen() {
+		return screen;
+	}
+
+	public void setScreen(int screen) {
+		this.screen = screen;
+	}
+
+	public void moveImages(float e) {
+		if(mouseMove>-93 && mouseMove<93) {
+			bhco.move(e);
+			bhfo.move(e);
+			nmo.move(e);
+			frontalo.move(-e);
+		}
+		System.out.println(mouseMove);
+	}
+
+	public int getMouseMove() {
+		return mouseMove;
+	}
+
+	public void setMouseMove(int mouseMove) {
+		this.mouseMove = mouseMove;
+	}
+	
+	
 }
