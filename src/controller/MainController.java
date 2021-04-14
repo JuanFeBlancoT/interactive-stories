@@ -14,7 +14,7 @@ public class MainController {
 	private int interactionsCompleted;
 	
 	public MainController(PApplet app) {
-		logic = new Logic();
+		logic = new Logic(app);
 		screen = 3;
 		mouseMove = 0;
 		interactionsCompleted = 0;
@@ -53,10 +53,12 @@ public class MainController {
 			bhfo.draw(app);
 			//normal
 			nmo.draw(app);
-			//front
-			frontalo.draw(app);
 			
 			//interactuable
+			logic.getInteractions()[0].draw(app);
+
+			//front
+			frontalo.draw(app);
 			
 			break;
 		case 4:
@@ -80,8 +82,9 @@ public class MainController {
 			bhfo.move(e);
 			nmo.move(e);
 			frontalo.move(-e);
+			
+			logic.updateElementPosX((int)e);
 		}
-		System.out.println(mouseMove);
 	}
 
 	public int getMouseMove() {
