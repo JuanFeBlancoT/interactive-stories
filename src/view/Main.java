@@ -1,6 +1,7 @@
 package view;
 
 import controller.MainController;
+import model.Egg;
 import processing.core.PApplet;
 import processing.event.MouseEvent;
 
@@ -35,7 +36,15 @@ public class Main extends PApplet{
 				mainController.setMouseMove(mainController.getMouseMove()-1);
 			}
 		}
-		
 	}
 	
+	public void mouseClicked() {
+		if(mainController.getScreen()==3) {
+			if(dist(mouseX, mouseY, mainController.getLogic().getInteractions()[0].getPosX(), 
+					mainController.getLogic().getInteractions()[0].getPosY())<mainController.getLogic().getInteractions()[0].getSize()) {					
+				
+				mainController.getLogic().getInteractions()[0].setHp(mainController.getLogic().getInteractions()[0].getHp()-1);
+			}
+		}
+	}
 } 

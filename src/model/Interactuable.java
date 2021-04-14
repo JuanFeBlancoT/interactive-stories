@@ -8,8 +8,9 @@ public class Interactuable {
 	protected boolean interacted;
 	protected int posX, posY, speed, size;
 	protected PImage image;
+	protected int hp;
 	
-	public Interactuable(int px, int py, int sz, PImage img, PApplet app) {
+	public Interactuable(int px, int py, int sz, PImage img, PApplet app, int h) {
 		
 		interacted = false;
 		posX = px;
@@ -17,6 +18,7 @@ public class Interactuable {
 		speed = 1;
 		size = sz;
 		image = img;
+		hp = h;
 	}
 	
 	public void draw(PApplet app) {
@@ -55,5 +57,11 @@ public class Interactuable {
 		this.size = size;
 	}
 	
+	public int getHp() {
+		return hp;
+	}
+	public void setHp(int hp) {
+		this.hp = hp;
+	}
 	
 }

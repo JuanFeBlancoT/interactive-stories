@@ -94,6 +94,14 @@ public class MainController {
 	public void setMouseMove(int mouseMove) {
 		this.mouseMove = mouseMove;
 	}
+
+	public Logic getLogic() {
+		return logic;
+	}
+
+	public void setLogic(Logic logic) {
+		this.logic = logic;
+	}
 	
 	
 }

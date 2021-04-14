@@ -13,7 +13,7 @@ public class Logic {
 		egg = app.loadImage("data/egg.png");
 	
 		
-		interactions[0] = new Egg(0,600,170,egg, app);
+		interactions[0] = new Egg(0,600,170,egg, app, 3);
 	}
 
 	public Interactuable[] getInteractions() {
