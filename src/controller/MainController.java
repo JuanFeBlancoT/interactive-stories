@@ -1,5 +1,6 @@
 package controller;
 
+import model.ImageB;
 import model.Logic;
 import processing.core.PApplet;
 import processing.core.PImage;
@@ -9,11 +10,17 @@ public class MainController {
 	private Logic logic;
 	private int screen;
 	private PImage bg, bhf, bhc, nm, frontal;
+	private ImageB bgo, bhfo, bhco, nmo, frontalo; 
 	
 	public MainController(PApplet app) {
 		logic = new Logic();
 		screen = 3;
 		loadImages(app);
+		bgo = new ImageB(app, 0,0, bg);
+		bhfo = new ImageB(app, 0,0, bhf);
+		bhco = new ImageB(app, -400,0, bhc);
+		nmo = new ImageB(app, -400,0, nm);
+		frontalo = new ImageB(app, -400,0, frontal);
 	}
 
 	private void loadImages(PApplet app) {
@@ -36,15 +43,15 @@ public class MainController {
 			break;
 		case 3:
 			//bg
-			app.image(bg, 0, 0);
+			bgo.draw(app);
 			//behind far
-			app.image(bhf, 0, 0);
+			bhfo.draw(app);
 			//behind close
-			app.image(bhc, -500, 0);
+			bhco.draw(app);
 			//normal
-			app.image(nm, -500, 0);
+			nmo.draw(app);
 			//front
-			app.image(frontal, -500, 0);
+			frontalo.draw(app);
 			
 			break;
 		case 4:

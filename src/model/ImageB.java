@@ -6,16 +6,14 @@ import processing.core.PImage;
 public class ImageB {
 
 	private int posX, posY, speed;
-	private String path;
 	private PImage img;
 	
-	public ImageB(PApplet app, int px, int py, int sp, String pat) {
+	public ImageB(PApplet app,int px, int sp, PImage img) {
 		
-		path = pat;
 		posX = px;
-		posY = py;
+		posY = 0;
 		speed = sp;
-		img = app.loadImage(path);
+		this.img = img;
 	}
 	
 	public void draw(PApplet app) {
