@@ -15,11 +15,11 @@ public class Main extends PApplet{
 	}
 	
 	public void setup() {
-		mainController = new MainController();
+		mainController = new MainController(this);
 	}
 
 	public void draw() {
 		background(0);
-		mainController.draw();
+		mainController.draw(this);
 	}
 } 
