@@ -65,8 +65,10 @@ public class MainController {
 				}
 				logic.getInteractions()[1].draw(app);
 				logic.getInteractions()[2].draw(app);
+				logic.getInteractions()[3].draw(app);
+				logic.getInteractions()[4].draw(app);
 				
-				//System.out.println(interactionsCompleted);
+				System.out.println(interactionsCompleted);
 			//}
 			
 
