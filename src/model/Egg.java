@@ -10,7 +10,6 @@ import processing.core.PImage;
 	
 	}
 	
-	@Override
 	public void draw(PApplet app) {
 		if(hp==3) {
 			app.image(image, posX, posY,size,size);

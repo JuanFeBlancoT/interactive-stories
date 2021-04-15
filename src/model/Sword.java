@@ -9,5 +9,5 @@ public class Sword extends Interactuable{
 		super(px, py, sz, img, app, h);
 		
 	}
-
+	
 }

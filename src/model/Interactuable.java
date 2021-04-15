@@ -14,6 +14,7 @@ public class Interactuable {
 		
 		interacted = false;
 		done = false;
+		selected = false;
 		posX = px;
 		posY = py;
 		speed = 1;

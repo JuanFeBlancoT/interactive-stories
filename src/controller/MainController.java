@@ -64,7 +64,9 @@ public class MainController {
 					logic.getInteractions()[1].setPosY(app.mouseY-80);
 				}
 				logic.getInteractions()[1].draw(app);
-				System.out.println(interactionsCompleted);
+				logic.getInteractions()[2].draw(app);
+				
+				//System.out.println(interactionsCompleted);
 			//}
 			
 
