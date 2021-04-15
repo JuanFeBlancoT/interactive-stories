@@ -94,5 +94,19 @@ public class Main extends PApplet{
 			mainController.setScreen(3);
 		}
 		
+		if(mainController.getScreen()==4 && mouseX> 690 && mouseX< 890 && mouseY> 700 && mouseY< 770) {
+			changeText();
+		}
+		
+	}
+
+	private void changeText() {
+		for (int i = 0; i < words.length; i++) {
+			if(words[i].equalsIgnoreCase("egg") || words[i].equalsIgnoreCase("sword") || words[i].equalsIgnoreCase("hollow") ||
+					words[i].equalsIgnoreCase("soul") || words[i].equalsIgnoreCase("insects")) {
+				words[i].toUpperCase();
+			}
+		}
+		
 	}
 } 
