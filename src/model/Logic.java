@@ -1,5 +1,7 @@
 package model;
 
+import java.net.InetAddress;
+
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -30,6 +32,17 @@ public class Logic {
 			interactions[i].setPosX(interactions[i].getPosX()+mouseMove);
 		}
 		
+	}
+
+	public int verifyInteractions() {
+		for (int i = 0; i < interactions.length && interactions[i]!=null; i++) {
+			if(interactions[i].isInteracted() && !interactions[i].isDone()) {
+				
+				interactions[i].setDone(true);
+				return 1;
+			}
+		}
+		return 0;
 	}
 	
 	

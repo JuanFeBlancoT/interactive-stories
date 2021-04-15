@@ -60,6 +60,8 @@ public class MainController {
 			//front
 			frontalo.draw(app);
 			
+			//interactions
+			interactionsCompleted += logic.verifyInteractions();
 			break;
 		case 4:
 			//load end

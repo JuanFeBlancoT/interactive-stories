@@ -15,11 +15,12 @@ import processing.core.PImage;
 		if(hp==3) {
 			app.image(image, posX, posY,size,size);
 		}else if(hp ==2) {
-			System.out.println(2);
+			//System.out.println(2);
 		}else if(hp==1){
-			System.out.println(1);
+			//System.out.println(1);
 		}else {
-			System.out.println("d");
+			//System.out.println("d");
+			interacted = true;
 		}
 	}
 }

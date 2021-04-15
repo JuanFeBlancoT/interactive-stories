@@ -5,7 +5,7 @@ import processing.core.PImage;
 
 public class Interactuable {
 
-	protected boolean interacted;
+	protected boolean interacted, done;
 	protected int posX, posY, speed, size;
 	protected PImage image;
 	protected int hp;
@@ -13,6 +13,7 @@ public class Interactuable {
 	public Interactuable(int px, int py, int sz, PImage img, PApplet app, int h) {
 		
 		interacted = false;
+		done = false;
 		posX = px;
 		posY = py;
 		speed = 1;
@@ -62,6 +63,14 @@ public class Interactuable {
 	}
 	public void setHp(int hp) {
 		this.hp = hp;
+	}
+
+	public boolean isDone() {
+		return done;
+	}
+
+	public void setDone(boolean done) {
+		this.done = done;
 	}
 	
 }
