@@ -5,7 +5,7 @@ import processing.core.PImage;
 
 public class Interactuable {
 
-	protected boolean interacted, done;
+	protected boolean interacted, done, selected;
 	protected int posX, posY, speed, size;
 	protected PImage image;
 	protected int hp;
@@ -71,6 +71,14 @@ public class Interactuable {
 
 	public void setDone(boolean done) {
 		this.done = done;
+	}
+
+	public boolean isSelected() {
+		return selected;
+	}
+
+	public void setSelected(boolean selected) {
+		this.selected = selected;
 	}
 	
 }

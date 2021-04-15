@@ -55,7 +55,18 @@ public class MainController {
 			nmo.draw(app);
 			
 			//interactuable
-			logic.getInteractions()[0].draw(app);
+			//for (int i = 0; i < logic.getInteractions().length && logic.getInteractions()[i] != null; i++) {
+
+				logic.getInteractions()[0].draw(app);
+				if(logic.getInteractions()[1].isSelected()) {
+					
+					logic.getInteractions()[1].setPosX(app.mouseX-70);
+					logic.getInteractions()[1].setPosY(app.mouseY-80);
+				}
+				logic.getInteractions()[1].draw(app);
+				System.out.println(interactionsCompleted);
+			//}
+			
 
 			//front
 			frontalo.draw(app);

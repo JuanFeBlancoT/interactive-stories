@@ -46,5 +46,13 @@ public class Main extends PApplet{
 				mainController.getLogic().getInteractions()[0].setHp(mainController.getLogic().getInteractions()[0].getHp()-1);
 			}
 		}
+		
+		if(dist(mouseX, mouseY, mainController.getLogic().getInteractions()[1].getPosX(),
+				mainController.getLogic().getInteractions()[1].getPosY())<mainController.getLogic().getInteractions()[1].getSize()) {
+			
+			mainController.getLogic().getInteractions()[1].setSelected(!mainController.getLogic().getInteractions()[1].isSelected());
+			
+			mainController.getLogic().getInteractions()[1].setInteracted(true);
+		}
 	}
 } 
