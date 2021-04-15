@@ -1,5 +1,9 @@
 package model;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Spliterator;
+
 import processing.core.PApplet;
 import processing.core.PImage;
 
@@ -8,7 +12,11 @@ public class Logic {
 	private Interactuable[] interactions;
 	private PImage egg, egg2, egg3, sword, enemy, soul, hollow;
 	
+	
 	public Logic(PApplet app) {
+		
+		
+		
 		interactions = new Interactuable[7];
 		
 		egg = app.loadImage("data/h1.png");
@@ -23,7 +31,7 @@ public class Logic {
 		interactions[1] = new Sword(1000,500,150, sword, app, 1);
 		interactions[2] = new Enemy(800,200,150, enemy, app, 1);
 		interactions[3] = new Soul(300,450,140, soul, app, 1);
-		interactions[4] = new HollowKnight(500,600,150, hollow, app, 1);
+		interactions[4] = new HollowKnight(0,600,140, hollow, app, 1);
 	}
 
 	public Interactuable[] getInteractions() {

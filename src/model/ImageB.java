@@ -23,7 +23,7 @@ public class ImageB {
 	
 	public void move(float x) {
 		int num = (int) x;
-		posX+=speed*x;
+		posX+=speed*num;
 	}
 
 	public int getPosX() {

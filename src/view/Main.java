@@ -1,5 +1,7 @@
 package view;
 
+import java.util.ArrayList;
+
 import controller.MainController;
 import model.Egg;
 import processing.core.PApplet;
@@ -11,18 +13,27 @@ public class Main extends PApplet{
 	}
 	
 	private MainController mainController;
+	private String[] textS;
+	private String[] words;
 	
 	public void settings() {
 		size(1200, 800);
 	}
 	
 	public void setup() {
-		mainController = new MainController(this);
+		
+		textS = loadStrings("story.txt");
+		words = split(textS[0], " ");
+		mainController = new MainController(this, words);
 	}
 
 	public void draw() {
 		background(0);
 		mainController.draw(this);
+		
+		if(mainController.getInteractionsCompleted()==5) {
+			mainController.setScreen(4);
+		}
 	}
 	
 	public void mouseWheel(MouseEvent event) {
@@ -74,5 +85,14 @@ public class Main extends PApplet{
 			
 			mainController.getLogic().getInteractions()[4].setInteracted(true);
 		}
+		
+		if(mainController.getScreen()==1 && mouseX> 690 && mouseX< 890 && mouseY> 600 && mouseY< 670) {
+			mainController.setScreen(2);
+		}
+		
+		if(mainController.getScreen()==2 && mouseX> 690 && mouseX< 890 && mouseY> 700 && mouseY< 770) {
+			mainController.setScreen(3);
+		}
+		
 	}
 } 
