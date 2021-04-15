@@ -102,11 +102,14 @@ public class Main extends PApplet{
 
 	private void changeText() {
 		for (int i = 0; i < words.length; i++) {
-			if(words[i].equalsIgnoreCase("egg") || words[i].equalsIgnoreCase("sword") || words[i].equalsIgnoreCase("hollow") ||
+			if(words[i].equalsIgnoreCase("egg") || words[i].equalsIgnoreCase("nail") || words[i].equalsIgnoreCase("hollow,") ||
 					words[i].equalsIgnoreCase("soul") || words[i].equalsIgnoreCase("insects")) {
-				words[i].toUpperCase();
+				words[i] = words[i].toUpperCase();
 			}
 		}
 		
+		for (int i = 0; i < words.length; i++) {
+			System.out.println(words[i]);
+		}
 	}
 } 

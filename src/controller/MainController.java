@@ -111,7 +111,7 @@ public class MainController {
 				logic.getInteractions()[4].draw(app);
 				logic.getInteractions()[0].draw(app);
 				
-				System.out.println(interactionsCompleted);
+				
 			//}
 			
 
